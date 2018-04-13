@@ -1,18 +1,13 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import eu.napcode.displayjoke.DisplayJokeActivity;
-import eu.napcode.javajokes.Joker;
-
 
 public class MainActivity extends AppCompatActivity implements GetJokeAsyncTask.JokeListener {
 
@@ -21,7 +16,6 @@ public class MainActivity extends AppCompatActivity implements GetJokeAsyncTask.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
