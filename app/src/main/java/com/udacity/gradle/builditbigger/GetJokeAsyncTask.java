@@ -3,7 +3,6 @@ package com.udacity.gradle.builditbigger;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Pair;
-import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -13,21 +12,19 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
-public class GetJokeAsyncTask extends AsyncTask<Pair<Context, GetJokeAsyncTask.JokeListener>, Void, String> {
+public class GetJokeAsyncTask extends AsyncTask< GetJokeAsyncTask.JokeListener, Void, String> {
 
     private static MyApi myApiService = null;
-    private Context context;
     private JokeListener jokeListener;
 
     @Override
-    protected String doInBackground(Pair<Context, JokeListener>... params) {
+    protected String doInBackground( JokeListener... params) {
 
         if(myApiService == null) {
            buildApiService();
         }
 
-        this.context = params[0].first;
-        this.jokeListener = params[0].second;
+        this.jokeListener = params[0];
 
         try {
             return myApiService.getJoke().execute().getData();

@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements GetJokeAsyncTask.
     }
 
     public void tellJoke(View view) {
-        new GetJokeAsyncTask().execute(new Pair<Context, GetJokeAsyncTask.JokeListener>(this, this));
+        new GetJokeAsyncTask().execute(this);
     }
 
     @Override
